@@ -2,8 +2,13 @@ import { useSphere } from "@react-three/cannon";
 import { useFrame, useThree } from "@react-three/fiber";
 import { Vector3 } from "three";
 import { useEffect, useRef } from 'react'
+import { useKeyboard } from '../hooks/useKeyboard.js'
 
 export const Player = () => {
+    const actions = useKeyboard()
+    console.log(actions)
+
+    
   const { camera } = useThree();
   const [ref, api] = useSphere(() => ({
     mass: 1,
